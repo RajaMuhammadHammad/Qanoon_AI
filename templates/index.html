@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QanoonAI - Legal Chat Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-balance-scale logo-icon"></i>
+                    <div class="logo-text">QanoonAI</div>
+                </div>
+                <div class="tagline">Pakistani Legal Assistant</div>
+                <button class="new-chat-btn" id="newChatBtn">
+                    <i class="fas fa-plus"></i>
+                    New Conversation
+                </button>
+            </div>
+            
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat history items will be populated here -->
+            </div>
+            
+            <div class="sidebar-footer">
+                Powered by SKILL TECHSOL • Version 1.0
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-chat">
+            <div class="chat-header">
+                <div class="mobile-header">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="chat-info">
+                        <h2>Legal Assistant</h2>
+                        <div class="chat-status">
+                            <div class="status-dot"></div>
+                            <span>Online & Ready</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-actions">
+                    <button class="action-btn" id="statsToggle" title="View Analytics">
+                        <i class="fas fa-chart-line"></i>
+                    </button>
+                    <button class="action-btn" id="clearChat" title="Clear Chat">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesContainer">
+              <div id="aiAnswerContainer" class="ai-response"></div>
+                <div class="welcome-screen" id="welcomeScreen">
+                    <i class="fas fa-balance-scale welcome-icon"></i>
+                    <h2 class="welcome-title">Welcome to QanoonAI</h2>
+                    <p class="welcome-subtitle">
+                        Your AI-powered Pakistani legal assistant. Ask any question about Pakistani law and get expert analysis with referenced sources.
+                    </p>
+                    <div class="example-questions">
+                        <div class="example-question" onclick="askExample('What are the grounds for divorce under Pakistani law?')">
+                            <strong>Divorce Law</strong><br>
+                            <small>What are the grounds for divorce under Pakistani law?</small>
+                        </div>
+                        <div class="example-question" onclick="askExample('How does inheritance work for women in Pakistan?')">
+                            <strong>Inheritance Rights</strong><br>
+                            <small>How does inheritance work for women in Pakistan?</small>
+                        </div>
+                        <div class="example-question" onclick="askExample('What are the requirements for a valid contract in Pakistan?')">
+                            <strong>Contract Law</strong><br>
+                            <small>What are the requirements for a valid contract?</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <form class="input-wrapper" id="chatForm">
+                    <textarea 
+                        class="input-field" 
+                        id="messageInput" 
+                        placeholder="Ask me anything about Pakistani law..."
+                        rows="1"
+                    ></textarea>
+                    <button type="submit" class="send-button" id="sendButton">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Panel -->
+    <div class="stats-panel" id="statsPanel">
+        <div class="stats-header">
+            <h3>Analytics</h3>
+            <button class="action-btn" id="closeStats">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="stats-content" id="statsContent">
+            <!-- Stats content will be populated here -->
+        </div>
+    </div>
+
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

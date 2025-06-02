@@ -1,0 +1,6 @@
+Flask
+faiss-cpu
+PyMuPDF
+sentence-transformers
+bert-score
+google-generativeai
